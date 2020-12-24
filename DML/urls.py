@@ -14,14 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from discordlogin  import views
-from DML.views import usermain
+from discordbot import botviews
+from main.views import usermain
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('DML/user', usermain, name='user_main'),
     path('DML', views.home, name = 'DML'),
     path('DML/login', views.discord_login, name='dml_login'),
-    path('DML/login/redirect',views.discord_login_redirect, name='discord_login_redirect')
-]
+    path('botini',botviews.initbot, name='initbot'),
+    path('DML/login/redirect',views.discord_login_redirect, name='discord_login_redirect'),
+] 
+
+urlpatterns += staticfiles_urlpatterns()
+

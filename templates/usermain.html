@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title%}{{username}} panel{% endblock %}
+
+{% block content %}
+<div class ="info-user">
+    <p> Bienvenido {{username}} </p>
+    <img src="{{avatar_url}}" alt= "Your avatar"/>
+</div>
+{% endblock %}
