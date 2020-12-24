@@ -1,2 +1,6 @@
 DML/settings.py
+DML/__pycache__
+discordbot/__pycache__
+discordlogin/__pycache__
+main/__pycache__
 secrets.json
